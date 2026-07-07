@@ -109,22 +109,22 @@ with col2:
 st.header("Patient Condition")
 temperature_level = st.selectbox(
   "Temperature", 
-  option = list(temp_map.keys())
+  options = list(temp_map.keys())
 )
 
 heart_rate_level = st.selectbox(
   "Heart Rate", 
-  option = list(hr_map.keys())
+  options = list(hr_map.keys())
 )
 
 duration = st.selectbox(
   "Duration of Symptoms", 
-  option = list(dur_map.keys())
+  options = list(dur_map.keys())
 )
 
 chief_complaint = st.selectbox(
   "Chief Complaint", 
-  option = list(cc_map.keys())
+  options = list(cc_map.keys())
 )
 
 st.header("Medical History")
