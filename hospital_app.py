@@ -174,7 +174,7 @@ if predict_button:
     )[0]
 
     # Fixed: Changed dept_map_inv -> depth_map_inv and departments -> department
-    department = depth_map_inv[prediction]
+    department = dept_map_inv[prediction]
 
     confidence = probability[prediction] * 100
 
