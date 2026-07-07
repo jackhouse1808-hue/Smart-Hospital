@@ -188,16 +188,16 @@ if info:
   st.success(
   f"{info["icon"]} : recommended Department: {Department}"
     )
- st.write(f"**Confidence** {confidence:.1f }%")
- st.write("Description: ")
- st.write(info["desc"])
- st.write("What should the patient do?")
+   st.write(f"**Confidence** {confidence:.1f }%")
+   st.write("Description: ")
+   st.write(info["desc"])
+   st.write("What should the patient do?")
 
-  for step in info["next"]: 
+    for step in info["next"]: 
     st.write(f"{step}")
 
-else:
-  st.success(f"Recommended Department: {department}")
-  st.write(f"Confidence : {confidence:.1f}%")
+  else:
+    st.success(f"Recommended Department: {department}")
+    st.write(f"Confidence : {confidence:.1f}%")
 
-st.warning("This A.I. Recommendation is only for educational purposes")
+  st.warning("This A.I. Recommendation is only for educational purposes")
