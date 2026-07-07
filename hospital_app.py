@@ -161,23 +161,23 @@ if predict_button:
     "chief_complaint" : cc_map[chief_complaint]
   }])
 
-patient_scaled = patient.copy()
+  patient_scaled = patient.copy()
 
-patient_scaled[cols_to_scale] = scaler.transform(
-  patient[cols_to_scale]
-)
+  patient_scaled[cols_to_scale] = scaler.transform(
+    patient[cols_to_scale]
+  )
 
-prediction = model.predict(
-  patient_scaled[features]
-)[0]
+  prediction = model.predict(
+    patient_scaled[features]
+  )[0]
 
-probability = model.predict_proba(
-  patient_scaled[features]
-)[0]
+  probability = model.predict_proba(
+    patient_scaled[features]
+  )[0]
 
-departments = dept_map_inv[prediction]
+  departments = dept_map_inv[prediction]
 
-confidence = probability[prediction] * 100
+  confidence = probability[prediction] * 100
 
 st.divider()
 st.header("Prediction Result")
@@ -186,18 +186,18 @@ info = DEPT_INFO.get(department)
 if info:
 
   st.success(
-    f"{info["icon"]} : recommended Department: {Department}"
-  )
-  st.write(f"**Confidence** {confidence: }%")
-  st.write("Description: ")
-  st.write(info["desc"])
-  st.write("What should the patient do?")
+  f"{info["icon"]} : recommended Department: {Department}"
+    )
+ st.write(f"**Confidence** {confidence:.1f }%")
+ st.write("Description: ")
+ st.write(info["desc"])
+ st.write("What should the patient do?")
 
   for step in info["next"]: 
     st.write(f"{step}")
 
 else:
   st.success(f"Recommended Department: {department}")
-  st.write(f"Confidence : {confidence}")
+  st.write(f"Confidence : {confidence:.1f}%")
 
 st.warning("This A.I. Recommendation is only for educational purposes")
